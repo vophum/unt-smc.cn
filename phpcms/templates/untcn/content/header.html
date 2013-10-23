@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<link href="{SKIN_PATH}untcn/css/reset.css" rel="stylesheet" type="text/css" />
+<link href="{SKIN_PATH}untcn/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
+<script type="text/javascript" src="{JS_PATH}jquery.sgallery.js"></script>
+<script type="text/javascript" src="{JS_PATH}search_common.js"></script>
+</head>
+<body>
+<div class="header">
+
+<div class="head">
+  	<div class="logo"><a href="{siteurl($siteid)}/"><img src="{IMG_PATH}v9/logo.jpg" /></a></div>
+    <div class="top">
+	<div class="top_a"><a href="{APP_PATH}index.php?m=content&c=rss&siteid={get_siteid()}" class="rss ib">rss</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="http://www.unt-smc.com" title="ENGLISH" class="STYLE3">ENGLISH<img src="{SKIN_PATH}untcn/images/2d2.gif"></a>
+	</div>
+	
+ </div>
+</div>	
+  
+<!---nav begin---->
+    <div id="nav">
+    <div class="navsearch">
+         <form action="{APP_PATH}index.php" method="get" target="_blank">
+            <input type="hidden" name="m" value="search"/>
+            <input type="hidden" name="c" value="index"/>
+            <input type="hidden" name="a" value="init"/>
+            <input type="hidden" name="typeid" value="{$typeid}" id="typeid"/>
+            <input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
+           <div class="input">搜索 <input type="text" name="q" id="q" onfocus="if(this.value=='请查询值') {this.value=''}" onblur="if(this.value=='') this.value='请查询值'"/></div>
+            <div  class="inputimg"><input type="submit" src="{SKIN_PATH}/untcn/images/sm_3.gif" value="搜 索" /></div>
+        </form>
+    </div>
+     {pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
+        	<ul  id="navmenu">
+			<li><a href="{siteurl($siteid)}"><span>首页</span></a></li>
+			{loop $data $r}
+			 <li><img src="{SKIN_PATH}untcn/images/index_new_55.jpg" /></li>
+			<li><a href="{$r[url]}" title="{$r[catname]}">{$r[catname]}</a></li>
+			{/loop}
+            </ul>
+        {/pc}
+	 {php echo runhook('glogal_menu')}
+    </div>
+    <!---nav end---->
+     <div class="banner"><script language="javascript" src="{APP_PATH}index.php?m=poster&c=index&a=show_poster&id=1"></script></div>
+</div>

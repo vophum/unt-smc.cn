@@ -1,0 +1,57 @@
+
+    <div class="box1"> 
+        <div class="title2"> 
+        <div class="chinese">产品中心</div> 
+        </div> 
+        <div class="content"> 
+        <script type="text/javascript">
+        <!--//---------------------------------+
+        //  Developed by lain2k 
+        //  Visit http://code.maimb.net for this script and more.
+        //  This notice MUST stay intact for legal use
+        // --------------------------------->
+        $(document).ready(function()
+        {
+            $(".parent").click(function()
+            {
+                $(this).addClass('open').removeClass('close').next("dd.child").show().siblings("dd.child").hide();
+                $(this).siblings().removeClass('open').addClass('close');
+            });
+        
+            //预先打开 id为p1的菜单
+            $("#p1").addClass('open').removeClass('close').next("dd.child").show().siblings("dd.child").hide();
+        
+        
+        
+        });
+        </script>
+        <dl id="leftmenu" class="treemenu mb20">
+        <!--只展开当前栏目所在一级栏目下的分类-->
+        
+        {pc:content action="category" catid="6" num="0" siteid="$siteid" order="listorder ASC"}
+			{loop $data $r}
+		     <dt class="parent" {if $catid==6 || $catid==7}id="p1"{/if}><a href="{$r[url]}" title="{$r[catname]}">{$r[catname]}</a></dt>
+             {pc:content action="lists" catid="$r[catid]" num="10" order="id DESC"}
+              <dd class="child">
+                <ul>
+                 {loop $data $r}
+                <li><a href="{$r[url]}" title="{$r[title]}"><img alt="{$arc[title]}" src="{thumb($r[thumb],40,29)}" width="40"  height="29"/></a><a title="{$arc[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],28)}</a></li>
+                 {/loop}
+                </ul> 
+             </dd>
+            {/pc}
+         {/loop}
+        {/pc}
+        </dl>
+        </div> 
+</div> 
+
+
+ <div class="box1"> 
+    	   <div class="title2"> <div class="chinese">联系我们</div></div> 
+           <div class="content"> 
+               <div class="p1g"> 
+                  <ul class="ul2g"> <li>地 址：九州易通科技有限公司</li> <li>电 话：0434-3219159</li> <li>传 真：0434-3219159</li> <li>邮 箱：cmseasy@163.com</li> </ul>
+               </div>
+           </div>
+    </div>

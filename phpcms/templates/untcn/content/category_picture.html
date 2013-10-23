@@ -1,0 +1,40 @@
+{template "content","header"}
+<div id="content" class="main">
+   <!----left begin--->
+    <div id="bd_leftg">
+    
+    {template "content","left"}
+   
+    </div>
+    <!----left end--->
+    
+     <div id="bd_rightg">
+        <div class="rightg_content">
+        {template "content","position"}
+       		 <div class="content2">
+                 <div id="content" class="pd">
+                 
+                {pc:content action="category" catid="$catid" num="0" siteid="$siteid" order="listorder ASC"}
+                    {loop $data $r}
+                     <dl class="category">
+                     <dt><a href="{$r[url]}" title="{$r[catname]}"><img alt="{$r[catname]}" src="{thumb($r[image],200,150)}" width="200"  height="150"/></a></dt>
+                      <dd>
+                      <h3><a href="{$r[url]}" title="{$r[catname]}">{$r[catname]}</a></h3>
+                       <div class="description">{str_cut($r[description],'580')}</div>
+                       <div class="more"><a href="{$r[url]}" title="{$r[catname]}">>>详情</a></div>
+                      </dd>
+                         </dl>
+                   {/loop}
+                {/pc}
+                        
+                </div>
+            </div>
+        </div>
+   	  </div>
+  <!----rihgt end--->
+
+    </div>
+ </div>
+{template "content","footer"}
+
+

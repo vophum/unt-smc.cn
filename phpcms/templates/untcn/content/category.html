@@ -1,0 +1,40 @@
+{template "content","header"}
+<div id="content" class="main">
+   <!----left begin--->
+    <div id="bd_leftg">
+    
+    {template "content","left"}
+   
+    </div>
+    <!----left end--->
+    
+     <div id="bd_rightg">
+        <div class="rightg_content">
+        {template "content","position"}
+       		 <div class="content2">
+                 <div id="content" class="pd">
+                 
+                {pc:content action="lists" catid="$catid" num="25" order="id DESC" page="$page"}
+                <ul  class="newslist">
+                    {loop $data $r}
+                    <li>
+                    <h3><span class="fr time">{date('Y-m-d H:i:s',$r[inputtime])}</span>·<a href="{$r[url]}" target="_blank"{title_style($r[style])}>{$r[title]}</a></h3>
+                    <p class="description">{str_cut($r[description],400,'')}</p>
+                   
+                    </li>
+	
+                   {/loop}
+                 </ul>  
+                {/pc}
+                        
+                </div>
+            </div>
+        </div>
+   	  </div>
+  <!----rihgt end--->
+
+    </div>
+ </div>
+{template "content","footer"}
+
+

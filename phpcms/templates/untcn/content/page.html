@@ -1,0 +1,25 @@
+{template "content","header"}
+<div id="content" class="main">
+   <!----left begin--->
+    <div id="bd_leftg">
+    
+    {template "content","left"}
+   
+    </div>
+    <!----left end--->
+    
+     <div id="bd_rightg">
+        <div class="rightg_content">
+        {template "content","position"}
+       		 <div class="content2">
+                 <div id="content" class="pd">
+                      {$content}
+                </div>
+            </div>
+        </div>
+   	  </div>
+  <!----rihgt end--->
+
+    </div>
+ </div>
+{template "content","footer"}
