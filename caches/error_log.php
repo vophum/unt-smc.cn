@@ -94,3 +94,27 @@
 <?php exit;?>10-24 15:46:46 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
 <?php exit;?>10-24 15:56:34 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
 <?php exit;?>10-24 15:59:51 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-24 23:08:24 | 2 | mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'root'@'localhost' (using password: YES) | phpcms\libs\classes\mysql.class.php | 56
+<?php exit;?>10-24 23:08:24 | 2 | mysql_error(): supplied argument is not a valid MySQL-Link resource | phpcms\libs\classes\mysql.class.php | 388
+<?php exit;?>10-24 23:08:24 | 2 | mysql_errno(): supplied argument is not a valid MySQL-Link resource | phpcms\libs\classes\mysql.class.php | 392
+<?php exit;?>10-24 23:08:24 | 2 | mysql_errno(): supplied argument is not a valid MySQL-Link resource | phpcms\libs\classes\mysql.class.php | 392
+<?php exit;?>10-24 23:08:24 | 2 | mysql_error(): supplied argument is not a valid MySQL-Link resource | phpcms\libs\classes\mysql.class.php | 388
+<?php exit;?>10-24 23:08:34 | 2 | mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'root'@'localhost' (using password: YES) | phpcms\libs\classes\mysql.class.php | 56
+<?php exit;?>10-24 23:08:34 | 2 | mysql_error(): supplied argument is not a valid MySQL-Link resource | phpcms\libs\classes\mysql.class.php | 388
+<?php exit;?>10-24 23:08:34 | 2 | mysql_errno(): supplied argument is not a valid MySQL-Link resource | phpcms\libs\classes\mysql.class.php | 392
+<?php exit;?>10-24 23:08:34 | 2 | mysql_errno(): supplied argument is not a valid MySQL-Link resource | phpcms\libs\classes\mysql.class.php | 392
+<?php exit;?>10-24 23:08:34 | 2 | mysql_error(): supplied argument is not a valid MySQL-Link resource | phpcms\libs\classes\mysql.class.php | 388
+<?php exit;?>10-24 23:09:39 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-24 23:09:43 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-24 23:09:59 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-24 23:34:01 | 2 | Invalid argument supplied for foreach() | phpcms\modules\search\search_type.php | 94
+<?php exit;?>10-24 23:40:33 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-24 23:44:06 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-24 23:44:09 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-24 23:44:51 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-25 00:13:42 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-25 00:14:35 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-25 00:15:46 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-25 00:36:13 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-25 00:46:03 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-25 00:46:08 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18

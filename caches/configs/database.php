@@ -5,7 +5,7 @@ return array (
 		'hostname' => 'localhost',
 		'database' => 'untsmc_cn',
 		'username' => 'root',
-		'password' => 'root',
+		'password' => '',
 		'tablepre' => 'unt_',
 		'charset' => 'utf8',
 		'type' => 'mysql',

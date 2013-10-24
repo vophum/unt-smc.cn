@@ -1,0 +1,37 @@
+<?php
+return array (
+  1 => 
+  array (
+    'id' => '1',
+    'catid' => '13',
+    'typeid' => '0',
+    'title' => '气动软管的选购',
+    'style' => '',
+    'thumb' => '',
+    'keywords' => '气动 软管 的气动软管的选购',
+    'description' => '气动软管的选购气动软管的选购气动软管的选购气动软管的选购',
+    'posids' => '1',
+    'url' => 'http://localhost/unt-smc.cn/index.php?m=content&c=index&a=show&catid=13&id=1',
+    'listorder' => '0',
+    'status' => '99',
+    'sysadd' => '1',
+    'islink' => '0',
+    'username' => 'admin',
+    'inputtime' => '1382627755',
+    'updatetime' => '1382627838',
+    'systems' => 'Win2000/WinXP/Win2003',
+    'copytype' => '免费版',
+    'language' => '简体中文',
+    'classtype' => '其他',
+    'version' => '',
+    'filesize' => '未知',
+    'stars' => '★★★★☆',
+    'hitsid' => 'c-2-1',
+    'views' => '0',
+    'yesterdayviews' => '0',
+    'dayviews' => '0',
+    'weekviews' => '0',
+    'monthviews' => '0',
+  ),
+);
+?>

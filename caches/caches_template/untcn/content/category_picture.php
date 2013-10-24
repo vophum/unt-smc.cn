@@ -25,6 +25,7 @@
                       </dd>
                          </dl>
                    <?php $n++;}unset($n); ?>
+                      <div class="text-c mg_t20" id="pages"><?php echo $pages;?></div>
                 <?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>
                         
                 </div>

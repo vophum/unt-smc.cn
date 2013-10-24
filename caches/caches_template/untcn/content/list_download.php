@@ -13,18 +13,21 @@
         <?php include template("content","position"); ?>
        		 <div class="content2">
                  <div id="content" class="pd">
-                 
-                <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=f3ce1cc9d867ab39bce847733fa8c22b&action=category&catid=%24catid&num=0&siteid=%24siteid&order=listorder+ASC\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'category')) {$data = $content_tag->category(array('catid'=>$catid,'siteid'=>$siteid,'order'=>'listorder ASC','limit'=>'20',));}?>
+                              
+                <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=6401a2ce199d1b88bccfc45608b989cc&action=lists&catid=%24catid&num=15&order=id+DESC&page=%24page\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$pagesize = 15;$page = intval($page) ? intval($page) : 1;if($page<=0){$page=1;}$offset = ($page - 1) * $pagesize;$content_total = $content_tag->count(array('catid'=>$catid,'order'=>'id DESC','limit'=>$offset.",".$pagesize,'action'=>'lists',));$pages = pages($content_total, $page, $pagesize, $urlrule);$data = $content_tag->lists(array('catid'=>$catid,'order'=>'id DESC','limit'=>$offset.",".$pagesize,'action'=>'lists',));}?>
+                
+                 <ul  class="downlist">
                     <?php $n=1;if(is_array($data)) foreach($data AS $r) { ?>
-                     <dl class="category">
-                     <dt><a href="<?php echo $r['url'];?>" title="<?php echo $r['catname'];?>"><img alt="<?php echo $r['catname'];?>" src="<?php echo thumb($r[image],200,150);?>" width="200"  height="150"/></a></dt>
-                      <dd>
-                      <h3><a href="<?php echo $r['url'];?>" title="<?php echo $r['catname'];?>"><?php echo $r['catname'];?></a></h3>
-                       <div class="description"><?php echo str_cut($r[description],'580');?></div>
-                       <div class="more"><a href="<?php echo $r['url'];?>" title="<?php echo $r['catname'];?>">>>详情</a></div>
-                      </dd>
-                         </dl>
+                    <li>
+                    <h3><span class="fr time"><?php echo date('Y-m-d H:i:s',$r[inputtime]);?></span>·<a href="<?php echo $r['url'];?>" target="_blank"<?php echo title_style($r[style]);?>><?php echo $r['title'];?></a></h3>
+                    <p class="description"><?php echo str_cut($r[description],400,'');?></p>
+                    <p class="down_attribute"><span class="icon_1">软件大小：<?php echo $r['filesize'];?></span><span class="icon_2">星级：<?php echo $r['stars'];?></span></p>
+                    </li>
+	
                    <?php $n++;}unset($n); ?>
+                 </ul>  
+                 <!--pages-->
+                    <div class="text-c mg_t20" id="pages"><?php echo $pages;?></div>
                 <?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>
                         
                 </div>

@@ -13,18 +13,21 @@
         {template "content","position"}
        		 <div class="content2">
                  <div id="content" class="pd">
-                 
-                {pc:content action="category" catid="$catid" num="0" siteid="$siteid" order="listorder ASC"}
+                              
+                {pc:content action="lists" catid="$catid" num="15" order="id DESC" page="$page"}
+                
+                 <ul  class="downlist">
                     {loop $data $r}
-                     <dl class="category">
-                     <dt><a href="{$r[url]}" title="{$r[catname]}"><img alt="{$r[catname]}" src="{thumb($r[image],200,150)}" width="200"  height="150"/></a></dt>
-                      <dd>
-                      <h3><a href="{$r[url]}" title="{$r[catname]}">{$r[catname]}</a></h3>
-                       <div class="description">{str_cut($r[description],'580')}</div>
-                       <div class="more"><a href="{$r[url]}" title="{$r[catname]}">>>详情</a></div>
-                      </dd>
-                         </dl>
+                    <li>
+                    <h3><span class="fr time">{date('Y-m-d H:i:s',$r[inputtime])}</span>·<a href="{$r[url]}" target="_blank"{title_style($r[style])}>{$r[title]}</a></h3>
+                    <p class="description">{str_cut($r[description],400,'')}</p>
+                    <p class="down_attribute"><span class="icon_1">软件大小：{$r[filesize]}</span><span class="icon_2">星级：{$r[stars]}</span></p>
+                    </li>
+	
                    {/loop}
+                 </ul>  
+                 <!--pages-->
+                    <div class="text-c mg_t20" id="pages">{$pages}</div>
                 {/pc}
                         
                 </div>
