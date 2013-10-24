@@ -65,3 +65,28 @@
 <?php exit;?>10-24 01:00:59 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
 <?php exit;?>10-24 01:35:05 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
 <?php exit;?>10-24 01:35:31 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-24 08:59:34 | 2 | mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'root'@'localhost' (using password: NO) | phpcms\libs\classes\mysql.class.php | 56
+<?php exit;?>10-24 08:59:34 | 2 | mysql_error(): supplied argument is not a valid MySQL-Link resource | phpcms\libs\classes\mysql.class.php | 388
+<?php exit;?>10-24 08:59:34 | 2 | mysql_errno(): supplied argument is not a valid MySQL-Link resource | phpcms\libs\classes\mysql.class.php | 392
+<?php exit;?>10-24 08:59:34 | 2 | mysql_errno(): supplied argument is not a valid MySQL-Link resource | phpcms\libs\classes\mysql.class.php | 392
+<?php exit;?>10-24 08:59:34 | 2 | mysql_error(): supplied argument is not a valid MySQL-Link resource | phpcms\libs\classes\mysql.class.php | 388
+<?php exit;?>10-24 08:59:37 | 2 | mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'root'@'localhost' (using password: NO) | phpcms\libs\classes\mysql.class.php | 56
+<?php exit;?>10-24 08:59:37 | 2 | mysql_error(): supplied argument is not a valid MySQL-Link resource | phpcms\libs\classes\mysql.class.php | 388
+<?php exit;?>10-24 08:59:37 | 2 | mysql_errno(): supplied argument is not a valid MySQL-Link resource | phpcms\libs\classes\mysql.class.php | 392
+<?php exit;?>10-24 08:59:37 | 2 | mysql_errno(): supplied argument is not a valid MySQL-Link resource | phpcms\libs\classes\mysql.class.php | 392
+<?php exit;?>10-24 08:59:37 | 2 | mysql_error(): supplied argument is not a valid MySQL-Link resource | phpcms\libs\classes\mysql.class.php | 388
+<?php exit;?>10-24 09:00:52 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-24 14:06:31 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-24 14:06:50 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-24 14:06:55 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-24 14:09:35 | 2 | extract() [<a href='function.extract'>function.extract</a>]: First argument should be an array | phpcms\modules\formguide\formguide.php | 243
+<?php exit;?>10-24 14:10:16 | 2 | array_key_exists() [<a href='function.array-key-exists'>function.array-key-exists</a>]: The second argument should be either an array or an object | phpcms\modules\formguide\formguide_field.php | 70
+<?php exit;?>10-24 14:12:41 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-24 14:14:08 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-24 14:45:50 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-24 14:46:01 | 2 | date() expects parameter 2 to be long, string given | phpcms\modules\formguide\templates\formguide_edit.tpl.php | 31
+<?php exit;?>10-24 14:46:28 | 2 | date() expects parameter 2 to be long, string given | phpcms\modules\formguide\templates\formguide_edit.tpl.php | 31
+<?php exit;?>10-24 14:47:31 | 2 | date() expects parameter 2 to be long, string given | phpcms\modules\formguide\templates\formguide_edit.tpl.php | 31
+<?php exit;?>10-24 14:48:35 | 2 | date() expects parameter 2 to be long, string given | phpcms\modules\formguide\templates\formguide_edit.tpl.php | 31
+<?php exit;?>10-24 14:55:01 | 2 | date() expects parameter 2 to be long, string given | phpcms\modules\formguide\templates\formguide_edit.tpl.php | 31
+<?php exit;?>10-24 14:56:14 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18

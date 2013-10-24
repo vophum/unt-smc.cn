@@ -16,7 +16,7 @@
                  
                <div id="Article">
         	<h1>{$title}<br />
-<span>{$inputtime}&nbsp;&nbsp;&nbsp;来源：{$copyfrom}&nbsp;&nbsp;&nbsp;评论：<a href="#comment_iframe" id="comment">0</a> 点击：</span><span id="hits"></span></h1>
+<span>{$inputtime}&nbsp;&nbsp;&nbsp;来源：{$copyfrom}&nbsp;&nbsp;&nbsp; 点击：</span><span id="hits"></span></h1>
 			{if $description}<div class="summary" >{$description}</div>{/if}
 			<div class="article_content">
 			{if $allow_visitor==1}
@@ -84,29 +84,16 @@
 	  </span>
 
 	  </div>
-      <div class="bk10"></div>
-      {if $allow_comment && module_exists('comment')}
-      <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid",$id,$siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0" scrolling="no"></iframe>
-      <div class="box">
-        		<h5>评论排行</h5>
-				 {pc:comment action="bang" siteid="$siteid" cache="3600"}
-            	<ul class="content list blue f14 row-2">
-				{loop $data $r}
-                	<li>·<a href="{$r[url]}" target="_blank">{str_cut($r[title], 40)}</a><span>({$r[total]})</span></li>
-					{/loop}
-                </ul>
-				{/pc}
-        </div>
-        {/if}
-                        
-                </div>
-            </div>
+
+       </div>
+    </div>
         </div>
    	  </div>
   <!----rihgt end--->
 
     </div>
  </div>
+ <script type="text/javascript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
 {template "content","footer"}
 
 
