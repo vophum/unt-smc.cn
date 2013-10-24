@@ -1,6 +1,6 @@
 #
 # robots.txt for PHPCMS v9
-#
+# assasdg
 User-agent: * 
 Disallow: /caches
 Disallow: /phpcms
