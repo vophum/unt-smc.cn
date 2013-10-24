@@ -90,3 +90,7 @@
 <?php exit;?>10-24 14:48:35 | 2 | date() expects parameter 2 to be long, string given | phpcms\modules\formguide\templates\formguide_edit.tpl.php | 31
 <?php exit;?>10-24 14:55:01 | 2 | date() expects parameter 2 to be long, string given | phpcms\modules\formguide\templates\formguide_edit.tpl.php | 31
 <?php exit;?>10-24 14:56:14 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-24 15:46:32 | 2048 | Only variables should be passed by reference | phpcms\modules\member\index.php | 231
+<?php exit;?>10-24 15:46:46 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-24 15:56:34 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
+<?php exit;?>10-24 15:59:51 | 2048 | Redefining already defined constructor for class index | phpcms\modules\formguide\index.php | 18
