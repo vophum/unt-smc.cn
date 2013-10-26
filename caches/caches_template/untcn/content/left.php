@@ -51,7 +51,10 @@
     	   <div class="title2"> <div class="chinese">联系我们</div></div> 
            <div class="content"> 
                <div class="p1g"> 
-                  <ul class="ul2g"> <li>地 址：九州易通科技有限公司</li> <li>电 话：0434-3219159</li> <li>传 真：0434-3219159</li> <li>邮 箱：cmseasy@163.com</li> </ul>
+                  <ul class="ul2g"> <li>地 址：深圳市优耐特自动化有限公司</li>
+<li>电 话：0755-27103957</li>
+<li>传 真： 0755-22639723</li> 
+<li>邮 箱： <a href="mailto: yanglw861908@163.com"> yanglw861908@163.com</a></li> </ul>
                </div>
            </div>
     </div>

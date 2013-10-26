@@ -1,19 +1,18 @@
 <div class="clear"></div>
 <div id="footer" class="footer">
-    	<div class="bottom_nav">
+ <div class="bottom_nav">
     	  {pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
-       <ul id="bottom_navmenu"> 
+          <ul id="bottom_navmenu"> 
 			<li><a href="{siteurl($siteid)}"><span>首页</span></a></li>
 			{loop $data $r}
 			 <li><img src="{SKIN_PATH}untcn/images/index_new_55.jpg" /></li>
-			<li><a href="{$r[url]}" title="{$r[catname]}">{$r[catname]}</a></li>
+			 <li><a href="{$r[url]}" title="{$r[catname]}">{$r[catname]}</a></li>
 			{/loop}
             </ul>
            {/pc}
-
-    	</div>
-        <div class="bottom_cprt"> <a title="{get('sitename')}" href="{siteurl($siteid)}">{site($name)}</a> All Rights Reserved. </div>
-    </div><!--fooder部结束-->
+ </div>
+ <div class="bottom_cprt"> Copyright © 2013 <a title="" href="{siteurl($siteid)}">{$SEO['name']}</a> All Rights Reserved. </div>
+ <!--fooder部结束-->
 </div>
 </body>
 </html>

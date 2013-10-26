@@ -5,6 +5,9 @@ $LANG['select_model_name'] = '所属模型';
 $LANG['select_module_name'] = '所属模块';
 $LANG['type_name'] = '类型名称';
 $LANG['description'] = '描述';
+$LANG['create_time'] = '发布时间：';
+$LANG['no_result'] = '没有搜索到记录：';
+$LANG['more'] = '详情';
 
 $LANG['re_index_note'] = '1、重建索引将会清空原有的所有的索引内容 , 每轮更新';
 $LANG['tiao'] = '条';

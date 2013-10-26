@@ -17,7 +17,7 @@
                {pc:content action="lists" catid="$catid" num="10" order="id DESC" page="$page"}
                     {loop $data $r}
                      <dl class="list">
-                     <dt><a href="{$r[url]}" title="{$r[catname]}"><img alt="{$r[catname]}" src="{thumb($r[thumb],110,80)}" width="110"  height="80"/></a></dt>
+                     <dt><a href="{$r[url]}" title="{$r[catname]}"><img alt="{$r[catname]}" src="{thumb($r[thumb],110,90)}" width="110"  height="90"/></a></dt>
                       <dd>
                       <h3><a href="{$r[url]}" title="{$r[catname]}">{str_cut($r[title],28)}</a></h3>
                        <div class="description">{str_cut($r[description],'480')}</div>

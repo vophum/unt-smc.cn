@@ -343,7 +343,7 @@ return array (
     'parentdir' => '',
     'catdir' => 'news',
     'url' => 'http://localhost/unt-smc.cn/index.php?m=content&c=index&a=lists&catid=12',
-    'items' => '1',
+    'items' => '2',
     'hits' => '0',
     'setting' => 'array (
   \'workflowid\' => \'\',

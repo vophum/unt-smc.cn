@@ -1,0 +1,20 @@
+/* main HotPro settings */
+
+* {margin: 0;padding: 0;border: 0;}
+/* PdtLeft PdtviewHistory settings */
+
+.rollBox3{float:left;width:665px;height:131px;} 
+.rollBox3 .LeftBotton{float:left;height:131px;width:17px;background:url('../images/left_icon.png') no-repeat left center;overflow:hidden;cursor:pointer;} 
+.rollBox3 .RightBotton{float:left;height:131px;width:17px;background:url('../images/right_icon.png') no-repeat left center;overflow:hidden;cursor:pointer;} 
+.rollBox3 .cont{float:left;width:630px;overflow:hidden;text-align:center;} 
+.rollBox3 .scrCont{float:left;width:10000px;text-align:center;} 
+.rollBox3 #List1,.rollBox3 #List2{float:left;text-align:center; } 
+.rollBox3 .cont li{float:left;width:157px;list-style:none;text-align:center;} 
+
+/*height:expression(this.style.height >= 50 ? 50: 50)!important;width:expression(this.style.height >= 50 ? (this.style.width*50/this.style.height) : (this.style.width*50/this.style.height)) !important;
+*/
+.rollBox3 .cont .img-wrap{background: url(../images/pbg.jpg) no-repeat 0px 0px;margin: 0px;
+text-align: center;}
+.rollBox3 .cont a:link,.rollBox3 .cont a:visited{display:block;width:157px;color:#868686;text-decoration:none;text-align:center; font:12px/32px SimSun,Arial,Sans-Serif} 
+.rollBox3 .cont a:hover{color:#868686;text-decoration:underline;} 
+

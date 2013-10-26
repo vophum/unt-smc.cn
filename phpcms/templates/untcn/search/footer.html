@@ -1,19 +1,18 @@
-<div class="sr_footer">	  
-{pc:content action="category" catid="1" num="15" siteid="$siteid" order="listorder ASC"}
-{loop $data $r}
-<a href="{$r[url]}" target="_blank">{$r[catname]}</a> |  
-{/loop}
-{/pc}
-<a href="{APP_PATH}index.php?m=link" target="_blank">友情链接</a>
-<p class="cp">Powered by <strong><a href="http://www.phpcms.cn" target="_blank">PHPCMS</a></strong> v9 &copy; {date('Y', SYS_TIME)} <img src="{IMG_PATH}copyright.gif"/>
-</p></div>
-      </div>
-    </div>
-<!--[if IE 6]>
-<script type="text/javascript" src="{JS_PATH}nsz.js"></script>
-<script type="text/javascript">
-	nsz.fix('.sr_logo img');
-</script>
-<![endif]-->
+<div class="clear"></div>
+<div id="footer" class="footer">
+ <div class="bottom_nav">
+    	  {pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
+          <ul id="bottom_navmenu"> 
+			<li><a href="{siteurl($siteid)}"><span>首页</span></a></li>
+			{loop $data $r}
+			 <li><img src="{SKIN_PATH}untcn/images/index_new_55.jpg" /></li>
+			 <li><a href="{$r[url]}" title="{$r[catname]}">{$r[catname]}</a></li>
+			{/loop}
+            </ul>
+           {/pc}
+ </div>
+ <div class="bottom_cprt"> Copyright © 2013 <a title="" href="{siteurl($siteid)}">{$SEO['name']}</a> All Rights Reserved. </div>
+ <!--fooder部结束-->
+</div>
 </body>
 </html>

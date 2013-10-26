@@ -14,11 +14,10 @@
         <?php include template("content","position"); ?>
        		 <div class="content2">
                  <div id="content" class="pd">
-                              
+                     <h5><?php echo $title;?></h5>
+    
                 <table cellspacing="1" cellpadding="0" align="center" class="down_info">
-                    <caption>
-                    <h5><?php echo $title;?></h5>
-                    </caption>
+                   
                     <tbody><tr>
                       <th>授权形式：</th>
                       <td><?php echo $copytype;?></td>
@@ -32,12 +31,9 @@
                       <th>软件语言：</th>
                       <td><?php echo $language;?></td>
                     </tr>
+                   
                     <tr>
-                      <th>软件平台：</th>
-                      <td><?php echo $systems;?></td>
-                    </tr>
-                    <tr>
-                      <th>软件类别：</th>
+                      <th>类别：</th>
                       <td> <?php echo $classtype;?></td>
                     </tr>
                     <tr>
@@ -53,7 +49,7 @@
                       <td colspan="2"><span id="hits"></span>（今日：<span id="todaydowns"></span>，本周：<span id="weekdowns"></span>，本月：<span id="monthdowns"></span>）</td>
                     </tr>
                   </tbody></table>
-                  <h5 class="tit">软件简介</h5>
+                  <h5 class="tit">内容简介</h5>
                   <div class="down_intro"><h4 class="tits"><?php echo $title;?></h4><?php echo $content;?></div>
                   <h5 class="tit">下载地址</h5>
                   <div class="down_address divl wrap">

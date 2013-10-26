@@ -11,15 +11,38 @@
 <script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
 <script type="text/javascript" src="{JS_PATH}jquery.sgallery.js"></script>
 <script type="text/javascript" src="{JS_PATH}search_common.js"></script>
+
+<script>
+function addToFavorite()
+{
+   if (document.all)
+   {
+      window.external.addFavorite('{siteurl($siteid)}',"UNT-SMC.CN &ndash;");
+   }
+   else if (window.sidebar)
+   {
+      window.sidebar.addPanel("UNT-SMC.CN &ndash;", '{siteurl($siteid)}', "");
+   }else{
+       alert("您的浏览器不支持点击收藏，请按快捷键 Ctrl+D 收藏UNT-SMC");
+    }
+   
+}
+</script>
+
+
 </head>
 <body>
 <div class="header">
 
 <div class="head">
-  	<div class="logo"><a href="{siteurl($siteid)}/"><img src="{IMG_PATH}v9/logo.jpg" /></a></div>
+  	<div class="logo"><a href="{siteurl($siteid)}/"><img src="{IMG_PATH}v9/logo.gif" /></a></div>
     <div class="top">
-	<div class="top_a"><a href="{APP_PATH}index.php?m=content&c=rss&siteid={get_siteid()}" class="rss ib">rss</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	<div class="top_a">
+    <a  href="javascript:addToFavorite()" rel="nofollow" title="加入收藏" class="STYLE3">加入收藏</a>
+    &nbsp;|&nbsp;
     <a href="http://www.unt-smc.com" title="ENGLISH" class="STYLE3">ENGLISH<img src="{SKIN_PATH}untcn/images/2d2.gif"></a>
+     &nbsp;|&nbsp;
+    <a href="http://www.unt-smc.cn" title="中文版" class="STYLE3">中文版<img src="{SKIN_PATH}untcn/images/2d2.gif"></a>
 	</div>
 	
  </div>
@@ -32,10 +55,10 @@
             <input type="hidden" name="m" value="search"/>
             <input type="hidden" name="c" value="index"/>
             <input type="hidden" name="a" value="init"/>
-            <input type="hidden" name="typeid" value="{$typeid}" id="typeid"/>
+            <input type="hidden" name="typeid" value="3" id="typeid"/>
             <input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
            <div class="input">搜索 <input type="text" name="q" id="q" onfocus="if(this.value=='请查询值') {this.value=''}" onblur="if(this.value=='') this.value='请查询值'"/></div>
-            <div  class="inputimg"><input type="submit" src="{SKIN_PATH}/untcn/images/sm_3.gif" value="搜 索" /></div>
+            <div  class="inputimg"><input type="submit" name="submit" style="width:37px; height:22px;" value="搜 索"/></div>
         </form>
     </div>
      {pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
@@ -60,7 +83,7 @@
 	picarr = new Array();
 	textarr = new Array();
 	var swf_width=1000;
-	var swf_height=325;
+	var swf_height=300;
 	//文字颜色|文字位置|文字背景颜色|文字背景透明度|按键文字颜色|按键默认颜色|按键当前颜色|自动播放时间|图片过渡效果|是否显示按钮|打开方式
 	var configtg='0xffffff|0|0x3FA61F|5|0xffffff|0xC5DDBC|0x000033|2|3|1|_blank';
 	var files = "";
@@ -68,14 +91,12 @@
 	var texts = "";
 	//这里设置调用标记
 	linkarr[1] = "http://www.unt-smc.cn";
-	picarr[1]  = "{SKIN_PATH}untcn/images/01.jpg";
+	picarr[1]  = "{SKIN_PATH}untcn/images/04.jpg";
 	linkarr[2] = "http://www.unt-smc.cn";
 	picarr[2]  = "{SKIN_PATH}untcn/images/02.jpg";
 	linkarr[3] = "http://www.unt-smc.cn";
 	picarr[3]  = "{SKIN_PATH}untcn/images/03.jpg";
-	linkarr[4] = "http://www.unt-smc.cn";
-	picarr[4]  = "{SKIN_PATH}untcn/images/04.jpg";
-	
+
 	for(i=1;i<picarr.length;i++){
 	if(files=="") files = picarr[i];
 	else files += "|"+picarr[i];
@@ -97,44 +118,49 @@
 <!---banner end--->
 
 <!--main-->
-<div class="main">
+<div class="main index">
 <!--index news begin--->
 <div class="index-news">
-<div class="title"><div class="chinese">最新资讯</div></div>
+<div class="title"><div class="chinese"></div><div class="more fr"><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=12"><img src="{SKIN_PATH}/untcn/images/more.png"></a></div></div>
 <div class="content">
 
 <div class="first">
-{pc:content  action="position" posid="10" catid="12" thumb="1" order="listorder DESC" num="2"}
+{pc:content  action="position" posid="2" catid="12" order="listorder DESC" num="1"}
     {loop $data $v}
-      <h4 class="blue"><a href="{$v[url]}" target="_blank"{title_style($v[style])}>{$v[title]}</a></h4>
-    <p><img src="{thumb($v[thumb],90,60)}" width="90" height="60" />{str_cut(strip_tags($v[description]), 160)}</p>
-    <div class="bk20 hr"><hr /></div>
+    <dt><a href="{$v[url]}" target="_blank"{title_style($v[style])}><img src="{thumb($v[thumb],120,100)}" width="120" height="100" /></a></dt>
+    <dd>
+     <h4><a href="{$v[url]}" target="_blank"{title_style($v[style])}>{$v[title]}</a></h4>
+     <p>{str_cut(strip_tags($v[description]), 120,'...')}</p>
+    </dd>  
     {/loop}
 {/pc}
 </div>
-<div class="list">
-{pc:content  action="lists" catid="12" order="id DESC" num="3"}
+
+{pc:content  action="lists" catid="12" order="id DESC" num="4"}
     <ul class="list">
     {loop $data $k $v}
-        <li>·<a href="{$v[url]}" title="{$v[title]}" target="_blank"{title_style($v[style])}>{str_cut($v[title], 30)}</a></li>
+        <li><a href="{$v[url]}" title="{$v[title]}" target="_blank"{title_style($v[style])}>{str_cut($v[title], 30)}</a></li>
+              
     {/loop}
-    </ul>
+   </ul>
 {/pc}
-</div>
+ <div class="bk20 hr"><hr></div>
 </div>
 </div>
 <!---index news end---->
 
 <!---index about begin---->
 <div class="index-about">
-<div class="title"><div class="chinese">公司简介</div></div>
+<div class="title"><div class="chinese"></div><div class="more fr"><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=2"><img src="{SKIN_PATH}/untcn/images/more.png"></a></div></div>
 <div class="content">
 <p>
+<span ><img src="http://localhost/unt-smc.cn/uploadfile/2013/1025/20131025111315179.gif" style="float:right;padding-left:10px;"></span>
 {pc:get sql="SELECT * FROM unt_page where catid=2"}
   {loop $data  $val}
-      {str_cut(strip_tags($val[content]),860,"...")}
+      {str_cut(strip_tags($val[content]),1020,"...")}
  {/loop}
 {/pc}
+
 </p>
 </div>
 </div>
@@ -142,22 +168,25 @@
 <div class="clear"></div>
 <!---index contact begin---->
 <div class="index-contact">
-<div class="title"><div class="chinese">联系我们</div></div>
+
+<div class="ad"><img src="{SKIN_PATH}untcn/images/coship_cn_12.jpg" width="295"></div>
 <div class="content">
-<li>地 址：九州易通科技有限公司</li>
-<li>电 话：0434-3219159</li>
-<li>传 真：0434-3219159</li> 
+<li>地 址：深圳市优耐特自动化有限公司</li>
+<li>电 话：0755-27103957</li>
+<li>传 真： 0755-22639723</li> 
+<li>邮 箱： <a href="mailto: yanglw861908@163.com"> yanglw861908@163.com</a></li> 
+
 </div>
 </div>
 <!---index contact end---->
 
 <!---index product begin---->
 <div class="index-product">
-<div class="title"><div class="chinese">产品推荐</div></div>
+<div class="title"><div class="chinese"></div><div class="more fr"><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=6"><img src="{SKIN_PATH}/untcn/images/more.png"></a></div></div>
 <div class="content">
 
 <div id="indexTopicPro2">
-<link href="{SKIN_PATH}/css/indexProTurn.css" type="text/css" rel="stylesheet">
+<link href="{SKIN_PATH}untcn/css/indexProTurn.css" type="text/css" rel="stylesheet">
 <div class="rollBox3">
 <div class="LeftBotton" onmousedown="ISL_GoDown()" onmouseup="ISL_StopDown()" onmouseout="ISL_StopDown()"></div>
 <div class="cont" id="ISL_Cont">
@@ -169,11 +198,12 @@
  {loop $data $r}
     <li>
         <div class="img-wrap">
-            <a href="{$r[url]}" title="{$r[title]}"><img src="{thumb($r[thumb],110,0)}" title="{$r[title]}"/></a>
+            <a href="{$r[url]}" title="{$r[title]}"><img src="{thumb($r[thumb],140,109)}" title="{$r[title]}"/></a>
         </div>
         <a href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],20)}</a>
     </li>
     {/loop}
+     
 </ul>
 {/pc}
 </div>
@@ -183,9 +213,8 @@
 </div>
 <div class="RightBotton" onmousedown="ISL_GoUp()" onmouseup="ISL_StopUp()" onmouseout="ISL_StopUp()"></div>
 </div>
-<script language="javascript" type="text/javascript" src="{$skin_path}/picTurn3.js"></script>
+<script language="javascript" type="text/javascript" src="{SKIN_PATH}untcn/js/picTurn3.js"></script>
 </div>
-
 </div>
 </div>
 <!---index product end---->

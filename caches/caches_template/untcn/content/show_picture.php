@@ -38,9 +38,9 @@
         <div class="list-pic">
          <a href="javascript:;" onclick="showpic('pre')" class="pre-bnt"><span></span></a>
 		<div class="cont" style="position:relative">
-			<ul class="cont picbig" id="pictureurls"  style="position:absolute">
+			<ul class="cont picbig" id="pictureurls"  style="position:absolute; width:54px;">
 			<?php $n=1; if(is_array($pictureurls)) foreach($pictureurls AS $pic_k => $r) { ?>
-			 <li><div class="img-wrap"><a href="javascript:;" hidefocus="true"><img src="<?php echo thumb($r[url], 100, 137, 0);?>" alt="<?php echo $r['alt'];?>" rel="<?php echo $r['url'];?>"/></a></div></li>
+			 <li><div class="img-wrap"><a href="javascript:;" hidefocus="true"><img width="50" height="50" src="<?php echo thumb($r[url], 50, 50, 0);?>" alt="<?php echo $r['alt'];?>" rel="<?php echo $r['url'];?>"/></a></div></li>
 			<?php $n++;}unset($n); ?>
 			</ul>
 		</div>
@@ -120,7 +120,7 @@
 		  <script type="text/javascript">document.write('<a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+encodeURIComponent(location.href)+'" title="分享到QQ空间" class="t5" target="_blank">&nbsp;</a>');</script>
       
 	  <span id='favorite'>
-		<a href="javascript:;" onclick="add_favorite('<?php echo addslashes($title);?>');" class="t6">收藏</a>
+		<a href="javascript:;" onclick="addToFavorite('<?php echo addslashes($title);?>');" class="t6">收藏</a>
 	  </span>
 
 	  </div>
@@ -134,19 +134,6 @@
     </div>
     <div id="load_pic" style="display:none;" rel="<?php echo IMG_PATH;?>msg_img/loading_d.gif">
  </div>
- <script language="JavaScript">
-<!--
-	function add_favorite(title) {
-		$.getJSON('<?php echo APP_PATH;?>api.php?op=add_favorite&title='+encodeURIComponent(title)+'&url='+encodeURIComponent(location.href)+'&'+Math.random()+'&callback=?', function(data){
-			if(data.status==1)	{
-				$("#favorite").html('收藏成功');
-			} else {
-				alert('请登录');
-			}
-		});
-	}
-//-->
-</script>
 <script type="text/javascript" src="<?php echo JS_PATH;?>show_picture.js"></script>
 <script type="text/javascript" src="<?php echo APP_PATH;?>api.php?op=count&id=<?php echo $id;?>&modelid=<?php echo $modelid;?>"></script>
 <?php include template("content","footer"); ?>

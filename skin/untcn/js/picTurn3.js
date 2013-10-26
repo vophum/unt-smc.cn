@@ -1,7 +1,7 @@
 
 var Speed = 20; //速度(毫秒) 
 var Space = 10; //每次移动(px) 
-var PageWidth = 125; //翻页宽度 
+var PageWidth = 157; //翻页宽度 
 var fill = 0; //整体移位 
 var MoveLock = false; 
 var MoveTimeObj; 

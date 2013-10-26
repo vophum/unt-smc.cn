@@ -22,13 +22,15 @@ class index {
 
 		$search_model = getcache('search_model_'.$siteid);
 		$type_module = getcache('type_module_'.$siteid);
-
 		if(isset($_GET['q'])) {
 			if(trim($_GET['q'])=='') {
 				header('Location: '.APP_PATH.'index.php?m=search');exit;
 			}
+			
+			
 			$typeid = empty($_GET['typeid']) ? 48 : intval($_GET['typeid']);
 			$time = empty($_GET['time']) || !in_array($_GET['time'],array('all','day','month','year','week')) ? 'all' : trim($_GET['time']);
+			
 			$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 			$pagesize = 10;
 			$q = safe_replace(trim($_GET['q']));
@@ -56,6 +58,7 @@ class index {
 			if($page==1 && !$setting['sphinxenable']) {
 				//精确搜索
 				$commend = $this->db->get_one("`typeid` = '$typeid' $sql_time AND `data` like '%$q%'");
+					
 			} else {
 				$commend = '';
 			}
@@ -184,6 +187,7 @@ class index {
 					$totalnums = count($data);
 				}
 			}
+			
 			$execute_time = execute_time();
 			$pages = isset($pages) ? $pages : '';
 			$totalnums = isset($totalnums) ? $totalnums : 0;

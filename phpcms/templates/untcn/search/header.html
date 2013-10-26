@@ -3,10 +3,74 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=7" />
-<title>{$SEO['site_title']}{$search_q} - Powered by PHPCMS</title>
-<link href="{CSS_PATH}search.css" rel="stylesheet" type="text/css" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<link href="{SKIN_PATH}untcn/css/reset.css" rel="stylesheet" type="text/css" />
+<link href="{SKIN_PATH}untcn/css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
 <script type="text/javascript" src="{JS_PATH}cookie.js"></script>
 <script type="text/javascript" src="{JS_PATH}search_common.js"></script>
+<script>
+function addToFavorite()
+{
+   if (document.all)
+   {
+      window.external.addFavorite('{siteurl($siteid)}',"UNT-SMC.CN &ndash;");
+   }
+   else if (window.sidebar)
+   {
+      window.sidebar.addPanel("UNT-SMC.CN &ndash;", '{siteurl($siteid)}', "");
+   }else{
+       alert("您的浏览器不支持点击收藏，请按快捷键 Ctrl+D 收藏UNT-SMC");
+    }
+   
+}
+</script>
+
+
 </head>
 <body>
+<div class="header">
+
+<div class="head">
+  	<div class="logo"><a href="{siteurl($siteid)}/"><img src="{IMG_PATH}v9/logo.gif" /></a></div>
+    <div class="top">
+	<div class="top_a">
+    <a  href="javascript:addToFavorite()" rel="nofollow" title="加入收藏" class="STYLE3">加入收藏</a>
+    &nbsp;|&nbsp;
+    <a href="http://www.unt-smc.com" title="ENGLISH" class="STYLE3">ENGLISH<img src="{SKIN_PATH}untcn/images/2d2.gif"></a>
+     &nbsp;|&nbsp;
+    <a href="http://www.unt-smc.cn" title="中文版" class="STYLE3">中文版<img src="{SKIN_PATH}untcn/images/2d2.gif"></a>
+	</div>
+	
+ </div>
+</div>	
+  
+<!---nav begin---->
+    <div id="nav">
+    <div class="navsearch">
+         <form action="{APP_PATH}index.php" method="get" target="_blank">
+            <input type="hidden" name="m" value="search"/>
+            <input type="hidden" name="c" value="index"/>
+            <input type="hidden" name="a" value="init"/>
+            <input type="hidden" name="typeid" value="3" id="typeid"/>
+            <input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
+           <div class="input">搜索 <input type="text" name="q" id="q" onfocus="if(this.value=='请查询值') {this.value=''}" onblur="if(this.value=='') this.value='请查询值'"/></div>
+            <div  class="inputimg"><button type="submit" name="submit" style="width:37px; height:22px;"/>搜 索</button></div>
+        </form>
+    </div>
+     {pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
+        	<ul  id="navmenu">
+			<li><a href="{siteurl($siteid)}"><span>首页</span></a></li>
+			{loop $data $r}
+			 <li><img src="{SKIN_PATH}untcn/images/index_new_55.jpg" /></li>
+			<li><a href="{$r[url]}" title="{$r[catname]}">{$r[catname]}</a></li>
+			{/loop}
+            </ul>
+        {/pc}
+	 {php echo runhook('glogal_menu')}
+    </div>
+    <!---nav end---->
+     <div class="banner"><script language="javascript" src="{APP_PATH}index.php?m=poster&c=index&a=show_poster&id=1"></script></div>
+</div>
